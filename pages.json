@@ -11,6 +11,12 @@
 			"style": {
 				"navigationBarTitleText": "uni-app"
 			}
+		},
+		{
+			"path": "pages/selectServices/SelectService",
+			"style": {
+				"navigationBarTitleText": "selectServices"
+			}
 		}
 	],
 	"globalStyle": {

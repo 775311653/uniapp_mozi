@@ -1,14 +1,11 @@
 <template>
   <view class="container">
     <button @click="onWechatLogin">微信登录</button>
-<!--    <text>登录后，您可以使用更多功能</text>-->
   </view>
 </template>
 
 
 <script>
-
-import api from '@/api';
 
 export default {
   name: "Login",
@@ -22,7 +19,7 @@ export default {
           const code = loginRes.code;
           console.log('code', code);
           // 调用服务端API，传递code
-          let resUniLogin = await api.webapp.auth.uni_login({ code, type: 'wx' });
+          let resUniLogin = await this.$api.webapp.auth.uni_login({ code, type: 'wx' });
           // console.log('resUniLogin', resUniLogin);
           if (resUniLogin.code !== 0) {
             uni.showToast({
@@ -31,10 +28,15 @@ export default {
             });
             return;
           }
+          this.$store.commit('set', { key: 'user', value: resUniLogin.data.user });
+          this.$store.commit('set', { key: 'token', value: resUniLogin.data.token });
           uni.showToast({
             title: '登录成功',
             icon: 'none',
           });
+          uni.navigateTo({
+            url: '/pages/selectServices/SelectService',
+          })
         },
         fail: (err) => {
           console.error('微信登录失败', err);
