@@ -44,7 +44,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .services-container {
   display: flex;
   flex-wrap: wrap;

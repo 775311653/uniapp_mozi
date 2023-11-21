@@ -9,6 +9,9 @@
 
 export default {
   name: "Login",
+  mounted() {
+    this.onWechatLogin();
+  },
   methods: {
     onWechatLogin() {
       // 调用微信登录
