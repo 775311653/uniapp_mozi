@@ -45,7 +45,7 @@ export default {
       }
     },
     selectService(service) {
-      uni.navigateTo({ url: `/pages/service/service?id=${service.id}` }); // 修改为 UniApp 路由跳转方式
+      uni.navigateTo({ url: `/pages/service/Service?id=${service.id}` }); // 修改为 UniApp 路由跳转方式
     },
   },
 };

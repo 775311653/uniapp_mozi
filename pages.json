@@ -19,13 +19,13 @@
       "style": {
         "navigationBarTitleText": "login"
       }
+    },
+    {
+      "path": "pages/service/Service",
+      "style": {
+        "navigationBarTitleText": "service"
+      }
     }
-    //		{
-    //			"path": "pages/selectServices/SelectService",
-    //			"style": {
-    //				"navigationBarTitleText": "selectServices"
-    //			}
-    //		}
   ],
   "globalStyle": {
     "navigationBarTextStyle": "black",

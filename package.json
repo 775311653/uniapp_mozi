@@ -2,8 +2,11 @@
   "dependencies": {
     "@dcloudio/uni-ui": "^1.4.28",
     "axios": "^1.6.2",
+    "install": "^0.13.0",
+    "npm": "^10.2.4",
     "sass": "^1.69.5",
     "sass-loader": "^10.1.1",
+    "uview-ui": "^2.0.36",
     "vuex": "^4.1.0",
     "vuex-persist": "^3.1.3",
     "vuex-persistedstate": "^4.1.0"
