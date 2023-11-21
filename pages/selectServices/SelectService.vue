@@ -1,20 +1,27 @@
 <template>
   <view class="services-container">
-    <view v-for="service in services" :key="service.id" class="service-card" @click="selectService(service)">
-      <text class="service-title">{{ service.name }}</text>
+    <uni-card v-for="service in services" :key="service.id" @click="selectService(service)"
+              class="cardItem"
+              :title="service.name" :extra="service.extra" shadow>
       <text class="service-description">{{ service.description }}</text>
-    </view>
+    </uni-card>
   </view>
 </template>
 
 
 <script>
 
+import uniCard from '@dcloudio/uni-ui/lib/uni-card/uni-card.vue';
+
+
 export default {
   data() {
     return {
       services: [],
     };
+  },
+  components: {
+    uniCard,
   },
   mounted() {
     console.log('onMounted');
@@ -47,23 +54,21 @@ export default {
 <style scoped lang="scss">
 .services-container {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 20rpx; /* 根据需要添加内边距 */
+
+  .cardItem {
+    width: 600rpx; /* 卡片宽度 */
+    margin: 20rpx; /* 卡片间距 */
+
+    .service-description {
+      font-size: 28rpx;
+      color: #666; /* 描述文字颜色 */
+    }
+  }
 }
 
-.service-card {
-  width: 600rpx; /* 调整宽度为适合移动端的尺寸 */
-  margin: 40rpx;
-  cursor: pointer;
-}
-
-.service-title {
-  font-size: 32rpx;
-  margin-bottom: 20rpx;
-}
-
-.service-description {
-  font-size: 28rpx;
-}
 </style>
 
