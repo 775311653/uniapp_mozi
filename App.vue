@@ -35,6 +35,10 @@
               title: '登录成功',
               icon: 'none',
             });
+            let pages = getCurrentPages(); // 获取当前页面栈
+            let currentPage = pages[pages.length - 1]; // 获取最后一个页面，即当前页面
+            currentPage.onShow(); // 执行目标页面的onShow方法,用于刷新页面数据
+
             // uni.navigateTo({
             //   url: '/pages/selectServices/SelectService',
             // })
